@@ -1,10 +1,13 @@
 import express, { Request, Response, NextFunction } from "express";
-import { renderPage } from "vite-plugin-ssr/server";
+import { renderPage } from "vike/server";
 
 const app = express();
 const port = 9000;
 
-app.use(express.static("dist/client"));
+// ✅ `base` を環境に応じて切り替え
+const BASE_URL = process.env.NODE_ENV === "production" ? "/my-ssr-app" : "/";
+
+app.use(BASE_URL, express.static("dist/client")); // ✅ `base` に対応
 
 app.get("*", async (req: Request, res: Response, next: NextFunction) => {
   const pageContextInit = { urlOriginal: req.originalUrl };

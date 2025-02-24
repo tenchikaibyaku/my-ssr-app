@@ -13,14 +13,14 @@
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,
-    "types": ["node", "vite-plugin-ssr"],
+    "types": ["node", "vike"],
 
     /* エイリアス設定 */
     "baseUrl": ".",
     "paths": {
-      "renderer/*": ["renderer/*"],
-      "src/*": ["src/*"],
-      "server/*": ["server/*"]
+      "~renderer/*": ["renderer/*"],
+      "~src/*": ["src/*"],
+      "~server/*": ["server/*"]
     }
   },
   "include": ["src", "renderer", "server"]

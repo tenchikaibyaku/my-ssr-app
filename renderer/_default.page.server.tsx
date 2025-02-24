@@ -1,7 +1,7 @@
 import React from "react";
 import { renderToString } from "react-dom/server";
-import { escapeInject, dangerouslySkipEscape } from "vite-plugin-ssr/server";
-import type { PageContextBuiltIn } from "vite-plugin-ssr/types";
+import { escapeInject, dangerouslySkipEscape } from "vike/server";
+import type { PageContextBuiltIn } from "vike/types";
 
 export { render };
 export type PageContext = PageContextBuiltIn & {
