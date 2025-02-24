@@ -9,4 +9,4 @@ function Page({ message }: { message?: string }) {
   );
 }
 
-export default { Page };
+export { Page }; // ✅ `export { Page }` に修正
