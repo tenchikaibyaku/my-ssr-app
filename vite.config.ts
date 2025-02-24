@@ -9,7 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   plugins: [
     react(),
-    vike() // ✅ V1 の設定は `+config.ts` に移動
+    vike()
   ],
   resolve: {
     alias: {
@@ -22,7 +22,7 @@ export default defineConfig({
     outDir: 'dist',
     minify: 'esbuild',
     manifest: true,
-    emptyOutDir: true,
+    emptyOutDir: true
   },
   base: "/my-ssr-app/",
   ssr: {

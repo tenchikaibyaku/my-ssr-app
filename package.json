@@ -5,16 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vike dev",
-    "build": "vike build --base=/my-ssr-app/",
+    "build": "vike build",
     "lint": "eslint .",
-    "preview": "vike preview",
+    "preview": "vite preview",
     "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
     "express": "^4.21.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "vike": "^0.4.223"
+    "vike": "0.4.223"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
@@ -27,7 +27,7 @@
     "eslint-plugin-react-refresh": "^0.4.18",
     "gh-pages": "^5.0.0",
     "globals": "^15.14.0",
-    "typescript": "~5.7.2",
+    "typescript": "^5.7.2",
     "vite": "^6.1.0"
   },
   "packageManager": "yarn@1.22.22"
