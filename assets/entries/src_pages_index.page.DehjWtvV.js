@@ -1,0 +1,1 @@
+import{j as r}from"../chunks/chunk-D_zvdyIk.js";function o({message:e}){return r.jsxs("div",{children:[r.jsx("h1",{children:"鴨川湯 - Kyoto Sento"}),r.jsx("p",{children:e??"ようこそ！"})]})}export{o as Page};
