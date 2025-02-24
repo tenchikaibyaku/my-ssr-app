@@ -1,31 +1,30 @@
-// webpack.config.jsの修正
-const path = require('path');  // 'import' から 'require' へ変更
+const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
+  mode: 'development',  // 'production' に切り替え可能
+  target: 'node',  // Node.js環境向けにバンドル
   entry: './server/index.js',
-  target: 'node',
-  externals: [nodeExternals()],
   output: {
-    filename: 'server.bundle.js',
-    path: path.resolve(__dirname, 'dist', 'server'),
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
   },
+  externals: [nodeExternals()],  // node_modules をバンドルしない
   module: {
-    mode: 'development', // または 'production' と指定
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-          },
-        },
-      },
-    ],
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
+      }
+    ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-  },
+    extensions: ['.js', '.jsx', '.json']
+  }
 };

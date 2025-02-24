@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     vike()
@@ -24,8 +24,8 @@ export default defineConfig({
     manifest: true,
     emptyOutDir: true
   },
-  base: "/my-ssr-app/",
+  base: process.env.VITE_APP_BASE_PATH || '/', // 開発環境と本番環境で切り替え
   ssr: {
     noExternal: ['vike']
   }
-});
+}));
