@@ -1,15 +1,15 @@
 export default {
   meta: {
     title: {
-      env: "server-and-client",
-      value: "My SSR App"
+      value: "My SSR App",
+      env: "server-and-client"
     },
     description: {
-      env: "server-only",
-      value: "SSR rendered page for Kamogawa-yu in Kyoto"
+      value: "SSR rendered page for Kamogawa-yu in Kyoto",
+      env: "server-only"
     }
   },
   prerender: {
-    partial: false // ✅ 明示的にプリレンダリングを有効化
+    partial: false
   }
 };
