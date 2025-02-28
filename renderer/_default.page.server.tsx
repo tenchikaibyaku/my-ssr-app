@@ -6,7 +6,7 @@ import { escapeInject, dangerouslySkipEscape } from "vike/server";
 export type PageContext = {
   Page: React.ComponentType;
   pageProps?: Record<string, unknown>;
-  urlOriginal: string; // `PageContextBuiltIn` で提供されていたプロパティを手動追加
+  urlOriginal: string;
 };
 
 export { render };
