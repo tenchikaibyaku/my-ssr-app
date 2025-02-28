@@ -5,7 +5,7 @@ import { hydrateRoot } from 'react-dom/client';
 export type PageContext = {
   Page: React.ComponentType;
   pageProps?: Record<string, unknown>;
-  urlOriginal: string; // `PageContextBuiltInClient` に含まれていた重要なプロパティを手動追加
+  urlOriginal: string;
 };
 
 export function render(pageContext: PageContext) {
