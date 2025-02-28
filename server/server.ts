@@ -10,7 +10,10 @@ const BASE_URL = process.env.NODE_ENV === "production" ? "/my-ssr-app" : "/";
 app.use(BASE_URL, express.static("dist/client")); // ✅ `base` に対応
 
 app.get("*", async (req: Request, res: Response, next: NextFunction) => {
-  const pageContextInit = { urlOriginal: req.originalUrl };
+  const pageContextInit = { 
+    urlOriginal: req.originalUrl,
+    pageProps: { message: "鴨川湯へようこそ！" } 
+  };
   const pageContext = await renderPage(pageContextInit);
 
   if (pageContext.httpResponse) {
