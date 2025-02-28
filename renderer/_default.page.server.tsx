@@ -1,13 +1,15 @@
 import React from "react";
 import { renderToString } from "react-dom/server";
 import { escapeInject, dangerouslySkipEscape } from "vike/server";
-import type { PageContextBuiltIn } from "vike/types";
 
-export { render };
-export type PageContext = PageContextBuiltIn & {
+// ✅ `PageContext` を手動で型定義
+export type PageContext = {
   Page: React.ComponentType;
   pageProps?: Record<string, unknown>;
+  urlOriginal: string; // `PageContextBuiltIn` で提供されていたプロパティを手動追加
 };
+
+export { render };
 
 async function render(pageContext: PageContext) {
   const { Page, pageProps } = pageContext;
