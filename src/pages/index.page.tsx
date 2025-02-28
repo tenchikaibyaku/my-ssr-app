@@ -7,4 +7,4 @@ function Page({ message }: { message?: string }) {
   );
 }
 
-export { Page }; // ✅ `export { Page }` に修正
+export { Page };
